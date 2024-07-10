@@ -1,9 +1,14 @@
 <script setup lang="ts">
-import TheWelcome from '../components/TheWelcome.vue'
+import LandingPage from '@/components/LandingPage.vue'
+import { MDBContainer } from 'mdb-vue-ui-kit';
+
 </script>
 
 <template>
-  <main>
-    <TheWelcome />
-  </main>
+  <MDBContainer lg>
+    <main>
+      <landing-page msg="Landing" />
+    </main>
+  </MDBContainer>
+
 </template>
