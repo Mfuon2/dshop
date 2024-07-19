@@ -23,13 +23,10 @@
 <script setup lang="ts">
 import {
   MDBCard,
-  MDBContainer,
   MDBCardBody,
   MDBCardImg,
   MDBCardText,
-  MDBCardTitle,
-  MDBListGroup,
-  MDBListGroupItem,MDBBadge
+  MDBBadge
 } from 'mdb-vue-ui-kit'
 
 const props = defineProps({

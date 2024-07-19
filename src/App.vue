@@ -19,9 +19,13 @@ const error = ref<string | null>(null);
 
 const handlePosition = (pos: GeolocationPosition) => {
   position.value = {
-    latitude: pos.coords.latitude,
-    longitude: pos.coords.longitude,
+    coords:{
+      latitude: pos.coords.latitude,
+      longitude: pos.coords.longitude,
+    }
   };
+  console.log("latitude", pos.coords.latitude);
+  console.log("longitude", pos.coords.longitude);
 };
 
 const handleError = (err: GeolocationError) => {
