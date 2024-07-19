@@ -3,7 +3,7 @@
     <MDBCardImg alt="..." :src="props.img" top />
     <MDBCardBody>
       <MDBCardText>
-        <div class="d-flex flex-column align-items-start mx-5">
+        <div class="d-flex flex-column align-items-start mx-3">
           <p class="fw-bold mb-1">{{props.title}}</p>
           <MDBBadge badge="warning" class="text-dark">{{props.category}}</MDBBadge>
           <p class="text-muted mb-1 text-start">

@@ -4,7 +4,10 @@
       <MDBContainer class="mt-2">
         <!-- Jumbotron -->
         <div class="p-5 text-center">
-          <h1 class="mb-3">Welcome to ∂Shop Mall</h1>
+          <h1 class="mb-5">Welcome to ∂Shop Mall</h1>
+          <h5 class="text-muted mb-2  text-center">
+            You are visiting us around {{location}}. We will help you find favorite and nice shops and stalls around you!
+          </h5>
         </div>
         <!-- Jumbotron -->
       </MDBContainer>
@@ -13,7 +16,7 @@
           <MDBCard class="w-responsive m-auto">
             <h4 class="m-5">Featured shops near you</h4>
             <MDBCardBody>
-              <MDBContainer class="mt-2">
+              <MDBContainer>
                 <swiper
                   ref="{swiperRef}"
                   :autoplay="{
@@ -81,14 +84,14 @@
                                         :group-opening-time="item.groupOpeningTime"
                                         :title="item.title" />
                   </swiper-slide>
-                  <template #container-end>
-                    <div class="autoplay-progress">
-                      <svg ref="progressCircle" viewBox="0 0 48 48">
-                        <circle cx="24" cy="24" r="20"></circle>
-                      </svg>
-                      <span ref="progressContent"></span>
-                    </div>
-                  </template>
+<!--                  <template #container-end>-->
+<!--                    <div class="autoplay-progress">-->
+<!--                      <svg ref="progressCircle" viewBox="0 0 48 48">-->
+<!--                        <circle cx="24" cy="24" r="20"></circle>-->
+<!--                      </svg>-->
+<!--                      <span ref="progressContent"></span>-->
+<!--                    </div>-->
+<!--                  </template>-->
                 </swiper>
               </MDBContainer>
             </MDBCardBody>
@@ -107,21 +110,20 @@ import {
   MDBCard,
   MDBCardBody,
   MDBContainer,
-  MDBCardHeader,
   MDBCol,
   MDBRow,
 } from 'mdb-vue-ui-kit'
 import { Navigation, Pagination, Autoplay } from 'swiper/modules'
-
-// Import Swiper Vue.js components
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import 'swiper/css/scrollbar'
 import '../style.css'
-import { ref } from 'vue'
+import { onBeforeMount, onMounted, ref } from 'vue'
 import ShopsCardComponent from '@/components/ShopsCardComponent.vue'
+import initLocation from '@/service/location_loader'
+
 
 const modules = ref([Navigation, Pagination, Autoplay])
 const progressCircle = ref()
@@ -136,7 +138,6 @@ const pagination = ref({
     return '<span class="' + className + '">' + (index + 1) + '</span>'
   }
 })
-
 const slidesContent = ref([
   {
     title: 'Title 1',
@@ -184,5 +185,10 @@ const slidesContent = ref([
     img: 'https://mdbootstrap.com/img/new/slides/041.webp'
   }
 ])
+let location =  ref()
+onBeforeMount(() => {
+  initLocation()
+   location.value = localStorage.getItem('location')
+})
 
 </script>
