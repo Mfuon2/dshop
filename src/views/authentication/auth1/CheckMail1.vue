@@ -8,6 +8,9 @@ import AuthCheckMail from '../authForms/AuthCheckMail.vue';
       <div class="round-1"></div>
       <div class="round-2"></div>
     </div>
+
+
+
     <!---Check mail Part-->
     <v-col cols="12" class="d-flex align-center">
       <v-container>
