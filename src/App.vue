@@ -1,13 +1,7 @@
-<script setup lang="ts">
-import LandingPage from '@/components/LandingPage.vue'
-</script>
-
 <template>
-  <LandingPage/>
+  <RouterView></RouterView>
 </template>
 
-<style>
-#app {
-  font-family: 'Avenir', sans-serif;
-}
-</style>
+<script setup lang="ts">
+import { RouterView } from 'vue-router';
+</script>

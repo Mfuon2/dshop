@@ -3,7 +3,7 @@
     <div class="mx-2 my-2 ">
       <MDBContainer class="mt-2">
         <!-- Jumbotron -->
-        <div class="p-5 text-center">
+        <div class="p-3 text-center">
           <h1 class="mb-5">Welcome to ∂Shop Mall</h1>
           <h5 class="text-muted mb-2  text-center">
             You are visiting us around {{location}}. We will help you find favorite and nice shops and stalls around you!
@@ -64,7 +64,7 @@
                 <swiper
                   ref="{swiperRef}"
                   :autoplay="{
-      delay: 5000,
+      delay: 10000,
       disableOnInteraction: false,
     }"
                   :centeredSlides="false"
