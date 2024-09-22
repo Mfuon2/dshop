@@ -9,11 +9,13 @@ export type ConfigProps = {
   boxed: boolean;
 };
 
+
+
 const config: ConfigProps = {
   Sidebar_drawer: true,
   Customizer_drawer: false,
   mini_sidebar: false,
-  setHorizontalLayout: false, // Horizontal layout
+  setHorizontalLayout: false,
   actTheme: 'DefaultTheme',
   fontTheme: 'Inter-var',
   inputBg: false,
